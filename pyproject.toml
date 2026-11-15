@@ -134,7 +134,7 @@ dependencies = [
 
 nogui = [
     'pandas>=1.4,<3.0',
-    'h5py',     # hdf5
+    'h5py; python_version < "3.15"',     # no Python 3.15 wheels yet
 ]
 gui_pyqt5 = [
     'pyNastran[gui]',
@@ -147,7 +147,7 @@ gui_pyside2 = [
 ]
 gui = [
     'pyNastran[nogui]',
-    'vtk>=9.0,<9.6', # rendering library
+    'vtk>=9.6,<10', # rendering library
     'imageio < 3.0',
     'pillow >= 10.1.0',
     'natsort',
